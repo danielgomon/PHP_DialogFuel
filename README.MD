@@ -19,18 +19,18 @@ PHP DialogFuel is a Small API Service For Connect ChatFuel (Chatbot) to Dialogfl
 ```
 	
 3. Upload All File in Folder **PHP_DialogFuel** to Your SLL Hosting.
-4. Testing Connection to Dialogflow by Enter https://yoursite.com/filepath/DialogFuel.php?queryString=Hello it's Ok,If show Greeting form Default Welcome Intent. like this. `    {"messages":[{"text":"Hello!"}]}`
+4. Testing Connection to Dialogflow by Enter https://yoursite.com/filepath/DialogFuel.php?fb_id=123456&txttodialogflow=Hello it's Ok,If show Greeting form Default Welcome Intent. like this. `    {"messages":[{"text":"Hello!"}]}`
 
 ### Connect to ChatFuel Bot
 1. Go to Your bot and Select **Default Answer** Block
 
 2. Click **Chatfuel Plugins** and Add **User Input** Plugins
 
-3. In **User Input** Card, Find **SAVE ANSWER TO ATTRIBUTE** then type **{{queryString}}** (make sure you type {{queryString}} becuase Service fixed only this Name )
+3. In **User Input** Card, Find **SAVE ANSWER TO ATTRIBUTE** then type **{{txttodialogflow}}** (make sure you type {{txttodialogflow}} becuase Service fixed only this Name )
 
 4.  Click **Chatfuel Plugins** and Add **JSON API** Plugins.
 
-5. In JSON API Card, Select Type to **GET** and **URL** to Your DialogFuel.php File. (Ex. https://yoursite.com/filepath/DialogFuel.php) and the last thing **USER ATTRIBUTES** set to **{{queryString}}**
+5. In JSON API Card, Select Type to **GET** and **URL** to Your DialogFuel.php File. (Ex. https://yoursite.com/filepath/DialogFuel.php?fb_id={{messenger user id}}) and the last thing **USER ATTRIBUTES** set to **{{txttodialogflow}}**
 
 6. Let's Test !
 
