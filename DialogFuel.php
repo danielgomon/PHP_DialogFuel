@@ -12,7 +12,7 @@ require_once dirname(__FILE__) . '/Config.php';
 //==================== Connect To Dialog Flow ==================
 $txttodialogflow = $_GET['txttodialogflow'];
 $headers = array("contentType"=>"application/json; charset=utf-8","Authorization"=>"Bearer ".$ClientToken);
-$sessionId = $_GET['fb_id'];
+$sessionId = $_GET['messenger_user_id'];
 $url = "https://api.dialogflow.com/v1/query?v=" . $qversion. '&query=' . $txttodialogflow . '&sessionId=' . $sessionId . '&lang=' . $lang . '';
 $response = Unirest\Request::get($url, $headers);
 
