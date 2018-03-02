@@ -1,38 +1,43 @@
-### What is PHP DialogFuel.
-PHP DialogFuel is a Small API Service For Connect ChatFuel (Chatbot) to Dialogflow(AI).This Service is Middle man for get user input form ChatFuel Chatbot and send to Natural-language process in Dialogflow then Return to User Answer. For Developer who want to make Smarter and Human like Chatbot.
-- Support PHP Version 5.0+
-- Host only on SSL Hosting (with https://)
-- this include [**unirest-php**](https://github.com/Kong/unirest-php "**unirest-php**") for Request Service 
-- This is All Free for Every One.
+### What is PHP DialogFuel?
+PHP DialogFuel is a small API service to connect ChatFuel (Chatbot) to Dialogflow(AI). This service is a middle man for get user input from ChatFuel, send it to Natural-language process in Dialogflow and get an answe in return.
 
-### How to Setup
-1. Pull requests. or Download PHP-Dialogfuel as Zip
-2. Open file **Config.php** then Change **ClientToken** and **DevToken** with Your Key (Get it in Dialogflow Setting page)
+- Supports PHP version 5.0+
+- Only works with SSL hosting (https://)
+- This include [**unirest-php**](https://github.com/Kong/unirest-php "**unirest-php**") for request service
+- This is free for everyone
+
+### How to setup
+1. Pull requests or download PHP-Dialogfuel as zip
+
+2. Open file **Config.php** and Change **ClientToken** and **DevToken** with your key (you can get it in Dialogflow settings page).
 
 ```php
         <?php
-    	$qversion = "20150910"; 
+    	$qversion = "20170712"; 
     	$lang = "en";
     	$ClientToken = "Client access token Here"; //Change this
     	$DevToken = "Developer access token Here"; // Change this
         ?>
 ```
 	
-3. Upload All File in Folder **PHP_DialogFuel** to Your SLL Hosting.
-4. Testing Connection to Dialogflow by Enter https://yoursite.com/filepath/DialogFuel.php?txttodialogflow=Hello it's Ok,If show Greeting form Default Welcome Intent. like this. `    {"messages":[{"text":"Hello!"}]}`
+3. Upload all the files in the folder **PHP_DialogFuel** to your SLL hosting.
 
-### Connect to ChatFuel Bot
+4. You can test the connection to Dialogflow by enter https://yoursite.com/filepath/DialogFuel.php?txttodialogflow=Hello if it's ok, it will show a greeting from the default welcome intent, like this: `    {"messages":[{"text":"Hello!"}]}`
+
+### Connect to ChatFuel bot
 1. Go to Your bot and Select **Default Answer** Block
 
 2. Click **Chatfuel Plugins** and Add **User Input** Plugins
 
-3. In **User Input** Card, Find **SAVE ANSWER TO ATTRIBUTE** then type **{{txttodialogflow}}** (make sure you type {{txttodialogflow}} becuase Service fixed only this Name )
+3. In the **User Input** card, find **SAVE ANSWER TO ATTRIBUTE** and type **{{txttodialogflow}}**
 
-4.  Click **Chatfuel Plugins** and Add **JSON API** Plugins.
+4. Click in **Chatfuel Plugins** and add **JSON API** plugin.
 
-5. In JSON API Card, Select Type to **GET** and **URL** to Your DialogFuel.php File. (Ex. https://yoursite.com/filepath/DialogFuel.php) and the last thing **USER ATTRIBUTES** set to **{{txttodialogflow}}**
+5. In the JSON API Card, select **GET** and in the **URL** enter the path to your DialogFuel.php file. (Ex. https://yoursite.com/filepath/DialogFuel.php) 
 
-6. Let's Test !
+6. In the JSON API Card set **USER ATTRIBUTES** to **{{txttodialogflow}}** and **{{messenger user id}}**
+
+7. Let's test!
 
 [![](https://opdev.men/wp-content/uploads/2018/03/php-dialogfuel-chatfuel-connect.jpg)](https://opdev.men/wp-content/uploads/2018/03/php-dialogfuel-chatfuel-connect.jpg)
 
