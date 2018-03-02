@@ -43,7 +43,7 @@ else
 	$messages = array(
 		'messages' => array(
 			0 => array(
-				'text' => 'Sorry, there is an error.',		// Remove 'Sorry, there is an error.' if you don't want to show an error message.
+				'text' => 'The Dialogflow response is empty.',		// Remove 'The Dialogflow response is empty.' if you don't want to show a warning message.
 			),
 		),
 	);

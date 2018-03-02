@@ -1,5 +1,5 @@
 ### What is PHP DialogFuel?
-PHP DialogFuel is a small API service to connect ChatFuel (Chatbot) to Dialogflow(AI). This service is a middle man for get user input from ChatFuel, send it to Natural-language process in Dialogflow and get an answe in return.
+PHP DialogFuel is a small API service to connect ChatFuel (Chatbot) to Dialogflow (AI). This service is a middle man than gets user input from ChatFuel, send it to Natural-language process in Dialogflow and get an answer in return.
 
 - Supports PHP version 5.0+
 - Only works with SSL hosting (https://)
@@ -7,9 +7,9 @@ PHP DialogFuel is a small API service to connect ChatFuel (Chatbot) to Dialogflo
 - This is free for everyone
 
 ### How to setup
-1. Pull requests or download PHP-Dialogfuel as zip
+1. Pull requests or download PHP-Dialogfuel as zip.
 
-2. Open file **Config.php** and Change **ClientToken** and **DevToken** with your key (you can get it in Dialogflow settings page).
+2. Open the **Config.php** file and Change **ClientToken** and **DevToken** with your key (you can get it from your Dialogflow settings page).
 
 ```php
         <?php
@@ -22,12 +22,12 @@ PHP DialogFuel is a small API service to connect ChatFuel (Chatbot) to Dialogflo
 	
 3. Upload all the files in the folder **PHP_DialogFuel** to your SLL hosting.
 
-4. You can test the connection to Dialogflow by enter https://yoursite.com/filepath/DialogFuel.php?txttodialogflow=Hello if it's ok, it will show a greeting from the default welcome intent, like this: `    {"messages":[{"text":"Hello!"}]}`
+4. You can test the connection to Dialogflow typing https://yoursite.com/filepath/DialogFuel.php?txttodialogflow=Hello&messenger_user_id=123456 in your web browser. If it's ok, it will show a greeting from the default welcome intent, something like this: `    {"messages":[{"text":"Hello!"}]}`
 
 ### Connect to ChatFuel bot
-1. Go to Your bot and Select **Default Answer** Block
+1. Go to your bot and select the **Default Answer** block.
 
-2. Click **Chatfuel Plugins** and Add **User Input** Plugins
+2. Click **Chatfuel Plugins** and add the **User Input** plugins.
 
 3. In the **User Input** card, find **SAVE ANSWER TO ATTRIBUTE** and type **{{txttodialogflow}}**
 
@@ -35,7 +35,7 @@ PHP DialogFuel is a small API service to connect ChatFuel (Chatbot) to Dialogflo
 
 5. In the JSON API Card, select **GET** and in the **URL** enter the path to your DialogFuel.php file. (Ex. https://yoursite.com/filepath/DialogFuel.php) 
 
-6. In the JSON API Card set **USER ATTRIBUTES** to **{{txttodialogflow}}** and **{{messenger user id}}**
+6. Finally, in the JSON API Card set **USER ATTRIBUTES** to **{{txttodialogflow}}** and **{{messenger user id}}**
 
 7. Let's test!
 
