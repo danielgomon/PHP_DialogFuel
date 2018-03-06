@@ -23,12 +23,12 @@ $gettext = $response_body['result']['fulfillment']['speech'];
 $getblock = $response_body['result']['fulfillment']['messages']['0']['payload']['redirect_to_blocks']; $getcontext = $response_body['result']['contexts']['0']['parameters'];
 
 
-if($gettext !=null && $getquery !='')
+if($gettext !=null && $gettext !='')
 {
 	$messages = array(
 		'messages' => array(
 			0 => array(
-				'text' => $getquery,
+				'text' => $gettext,
 			),
 		),
 	);
@@ -37,7 +37,7 @@ elseif($getblock !=null && $getblock !='')
 {
 	$messages = array(
 		'set_attributes' => $getcontext,
-		'redirect_to_blocks' => $getblock,
+		'redirect_to_blocks' => $getblock
 	);
 }
 else
