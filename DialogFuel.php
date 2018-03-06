@@ -11,23 +11,24 @@ require_once dirname(__FILE__) . '/Config.php';
 
 //==================== Connect To Dialog Flow ==================
 $txttodialogflow = $_GET['txttodialogflow'];
-$headers = array("contentType"=>"application/json; charset=utf-8","Authorization"=>"Bearer ".$ClientToken);
 $sessionId = $_GET['messenger_user_id'];
+$headers = array("contentType"=>"application/json; charset=utf-8","Authorization"=>"Bearer ".$ClientToken);
 $url = "https://api.dialogflow.com/v1/query?v=" . $qversion. '&query=' . $txttodialogflow . '&sessionId=' . $sessionId . '&lang=' . $lang . '';
 $response = Unirest\Request::get($url, $headers);
 
 
 //============== Formatting Data to Chatfuel Json =============
 $response_body = json_decode($response->raw_body,true);
-$getword = $response_body['result']['fulfillment']['speech'];
-$getblock = $response_body['result']['fulfillment']['messages']['0']['payload']['redirect_to_blocks']; 
+$gettext = $response_body['result']['fulfillment']['speech'];
+$getblock = $response_body['result']['fulfillment']['messages']['0']['payload']['redirect_to_blocks']; $getcontext = $response_body['result']['contexts']['0']['parameters'];
 
-if($getword !=null && $getword !='')
+
+if($gettext !=null && $getquery !='')
 {
 	$messages = array(
 		'messages' => array(
 			0 => array(
-				'text' => $getword,
+				'text' => $getquery,
 			),
 		),
 	);
@@ -35,6 +36,7 @@ if($getword !=null && $getword !='')
 elseif($getblock !=null && $getblock !='')
 {
 	$messages = array(
+		'set_attributes' => $getcontext,
 		'redirect_to_blocks' => $getblock,
 	);
 }
