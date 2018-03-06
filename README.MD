@@ -37,7 +37,9 @@ PHP DialogFuel is a small API service to connect ChatFuel (Chatbot) to Dialogflo
 
 6. Finally, in the JSON API Card set **USER ATTRIBUTES** to **{{txttodialogflow}}** and **{{messenger user id}}**
 
-7. Let's test!
+7. If you want to use contexts from DialogFlow just add them as user attributes, exactly the same as they appear in DialogFlow (case sensitive). (Ex. **{{geo-country}}** or **{{given-name}}**).
+
+8. Let's test!
 
 [![](https://opdev.men/wp-content/uploads/2018/03/php-dialogfuel-chatfuel-connect.jpg)](https://opdev.men/wp-content/uploads/2018/03/php-dialogfuel-chatfuel-connect.jpg)
 
