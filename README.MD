@@ -46,3 +46,4 @@ PHP DialogFuel is a small API service to connect ChatFuel (Chatbot) to Dialogflo
 - [Chatfuel](https://chatfuel.com "Chatfuel")
 - [Dialogflow](https://dialogflow.com/ "Dialogflow")
 - [OPDEV.MEN ](https://opdev.men "OPDEV.MEN ") (My site's)
+- [Bórea](https://opdev.men "Filólogos de Costa Rica ")
